@@ -1,0 +1,45 @@
+body {
+  background-color: #2f4f4f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  background-color: #fffff0;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 117.45vh;
+  height: 67.11vh;
+}
+
+#DivtipoConversao {
+  display: flex;
+  justify-content: center;
+}
+
+#conversor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+  }
+
+input,
+output {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+}
