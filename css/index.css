@@ -16,7 +16,9 @@ body {
   border: 1px solid white;
   border-radius: 10px;
   width: 117.45vh;
-  height: 67.11vh;
+  min-height: 67.11vh;
+
+  
 }
 
 #DivtipoConversao {
@@ -32,9 +34,9 @@ body {
 }
 
 #footer {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
+}
 
 input,
 output {

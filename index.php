@@ -11,11 +11,10 @@
 
 <body>
     <div class="container">
-        <h1 class="mb-3 text-dark">Conversor de Números</h1>
+        <h1 class="mb-3 text-dark text-center">Conversor de Números</h1>
 
         <div class="row mb-4" id="DivtipoConversao">
-
-            <section class="col col-5">
+            <section class="col-12 col-md-5 mx-auto">
                 <label class="label text-dark" for="tipoConversao">Tipo de Conversão</label>
                 <select id="tipoConversao" class="form-control">
                     <option value="dr">Decimal -> Romano</option>
@@ -25,25 +24,24 @@
         </div>
 
         <div class="mb-5" id="conversor">
-            <section class="col col-5 mb-4">
-                <label class="text-dark" id="tituloNumeroEntrada" for="numeroEntrada">Numero em Real</label>
+            <section class="col-12 col-md-5 mb-4 mx-auto">
+                <label class="text-dark" id="tituloNumeroEntrada" for="numeroEntrada">Número em Real</label>
                 <input type="text" id="numeroEntrada" class="form-control" placeholder="Digite um número Real">
             </section>
 
-            <section class="col col-5">
+            <section class="col-12 col-md-5 mx-auto text-center">
                 <button class="btn btn-danger" id="btnConverter" type="button">Converter</button>
             </section>
-
         </div>
 
         <div class="row" id="footer">
-            <span class="text-dark" id="resultado"></span>
+            <span class="text-dark mx-auto" id="resultado"></span>
         </div>
-
     </div>
 </body>
 
 <script src="js/index.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath   
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
