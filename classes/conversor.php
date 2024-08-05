@@ -1,11 +1,11 @@
 <?php
 header('Content-Type: application/json');
 
-class conversorNumeros
+class ConversorNumeros
 {
     public function romanoParaDecimal($value)
     {
-        $numero = strtoupper($value);
+        $numero = strtoupper(trim($value));
         $numerosRomanos = [
             'M' => 1000,
             'CM' => 900,
@@ -25,7 +25,11 @@ class conversorNumeros
         $decimal = 0;
         $posicaoNumero = 0;
         $tamanhoNumero = strlen($numero);
-        
+
+        if (!preg_match('/^[MDCLXVI]+$/', $numero)) {
+            return json_encode(['error' => "Número romano inválido: " . $numero]);
+        }
+
         while ($posicaoNumero < $tamanhoNumero) {
             if ($posicaoNumero + 1 < $tamanhoNumero && isset($numerosRomanos[$numero[$posicaoNumero] . $numero[$posicaoNumero + 1]])) {
                 $decimal += $numerosRomanos[$numero[$posicaoNumero] . $numero[$posicaoNumero + 1]];
@@ -38,12 +42,12 @@ class conversorNumeros
             }
         }
 
-        return json_encode(['result' => '<b style="color: #556B2F">'.$decimal.'</b>']);
+        return json_encode(['result' => '<b style="color: #556B2F">' . $decimal . '</b>']);
     }
 
     public function decimalParaRomano($value)
     {
-        $numero = $value;
+        $numero = intval($value);
         if ($numero < 1 || $numero > 10000) {
             return json_encode(['error' => "Número fora do intervalo permitido (1-10000): " . $numero]);
         }
@@ -72,11 +76,11 @@ class conversorNumeros
             }
         }
 
-        return json_encode(['result' => '<b style="color: #556B2F">'.$romano.'</b>']);
+        return json_encode(['result' => '<b style="color: #556B2F">' . $romano . '</b>']);
     }
 }
 
-$converter = new conversorNumeros();
+$converter = new ConversorNumeros();
 $type = $_POST['type'] ?? '';
 $value = $_POST['value'] ?? '';
 

@@ -34,7 +34,7 @@ async function conversor() {
   const numero = numeroEntrada.value;
   var tipo = tipoConversao.value;
 
-  const local = "./classes/convert.php";
+  const local = "./classes/conversor.php";
   try {
     const response = await fetch(local, {
       method: "POST",
